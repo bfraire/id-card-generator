@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 650px;
+    height: 380px;
+    perspective: 700px;
+}
+/* 
+.container:hover > .card {
+    cursor: pointer;
+    transform: rotateY(180deg);
+}
+
+.container:hover > .option-1-frontface {
+    transform: rotateY(180deg) perspective(700px);
+}
+
+.container:hover > .option-1-backface {
+    transform: rotateY(180deg) perspective(700px);
+} */
+
+.card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 400ms;
+    transform-style: preserve-3d;
+}
+
+.option-1-frontface img,
+.option-1-backface img {
+    width: 650px;
+    height: 380px;
+    border-radius: 6.5%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.option-1-frontface {
+    position: absolute;
+}
+
+.option-1-backface {
+    position: absolute;
+}
+
+.option-1-backface {
+    transform: rotateY(180deg);
+    justify-content: center;
+    align-items: center;
+    perspective: 700px;
+    backface-visibility: hidden;
+}
+
+.option-1-frontface {
+    transform: rotateY(360deg);
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.text-box {
+    position: relative;
+    top: -68%;
+    left: 35.6%;
+    width: 100px;
+    border: none;
+    outline: none;
+    font-family: 'Shantell Sans', sans-serif;
+    font-size: 22px;
+}
+
+.input-container input {
+    width: 100px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'Shantell Sans', sans-serif;
+    font-size: 22px;
+}
+
+/* Add styles for text-box2, text-box3, text-box4 */
+/* .text-box2, .text-box3, .text-box4 {
+    position: absolute;
+    width: 200px;
+    border: none;
+    outline: none;
+    font-family: 'Shantell Sans', sans-serif;
+    font-size: 22px;
+    top: 85px; /* Adjust this value as needed */
+
+
+/* .text-box3 {
+    top: 110px; 
+}
+
+.text-box4 {
+    top: 135px; /
+}  */
+
+.text-box2 {
+    position: absolute; /* Change to 'absolute' to move it independently */
+    top: 177px; /* Adjust this value to move it down by a few pixels */
+    left: 35.6%;
+    width: 200px;
+    border: none;
+    outline: none;
+    font-family: 'Shantell Sans', sans-serif;
+    font-size: 22px;
+}
+
+.text-box3 {
+    position: absolute; /* Change to 'absolute' to move it independently */
+    top: 233px; /* Adjust this value to move it down by a few pixels */
+    left: 35.6%;
+    border: none;
+    outline: none;
+    font-family: 'Shantell Sans', sans-serif;
+    font-size: 22px;
+}
+
+.text-box4 {
+    position: absolute; /* Change to 'absolute' to move it independently */
+    top: 290px; /* Adjust this value to move it down by a few pixels */
+    left: 35.6%;
+    border: none;
+    outline: none;
+    font-family: 'Shantell Sans', sans-serif;
+    font-size: 22px;
+}
+
+
+.input-second input {
+    position: absolute;
+    top: -70%;
+    width: 200px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'Shantell Sans', sans-serif;
+    font-size: 22px;
+}
+
+.input-third input {
+    position: relative;
+    top: -90%;
+    width: 200px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'Shantell Sans', sans-serif;
+    font-size: 22px;
+}
+
+.input-fourth input {
+    position: relative;
+    width: 400px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'Shantell Sans', sans-serif;
+    font-size: 22px;
+}
+
+/* Add styles for the flip button */
+#flipButton {
+    margin-top: 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#flipButton:hover {
+    background-color: #2980b9;
+}
+
+.card.flipped {
+    transform: rotateY(180deg) perspective(700px);
+}
+
+/* Add this to hide the input elements when the card is flipped */
+.card.flipped .text-box .text-box2 .text-box3 .text-box4 input {
+    visibility: hidden;
+}
+
+/* -- Preview Image Elements --*/
+.your-face {
+    text-align: center; 
+}
+
+.your-face label {
+    cursor: pointer; 
+    display: inline-block; 
+}
+
+#preview-image {
+    width: 200px;
+    height: 200px; 
+    border: 2px solid #333; 
+}
+
+.your-face p{
+    margin-top: 10px;
+    font-weight: bold; 
+    color: white; 
+    font-family: 'Shantell Sans', sans-serif;
+}
+
+#image-input { 
+    display: none; 
+}
